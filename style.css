@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color:#f0e6d2;
+  }
+  
+  .game-container {
+    text-align: center;
+    background: linear-gradient(135deg, #6a1b9a, #ff4081); /* Gradient background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    background-color: #ffffff;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cell:hover {
+    background-color: #ffeb3b; /* Bright yellow for hover */
+    transform: scale(1.1); /* Zoom effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cell.X {
+    color: #d32f2f; /* Red for 'X' */
+  }
+  
+  .cell.O {
+    color: #1976d2; /* Blue for 'O' */
+  }
+  
+  button {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  button:active {
+    transform: scale(1); /* Reset zoom effect on click */
+  }
+  
+  #status {
+    font-size: 1.4rem;
+    color: #333;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  #status.win {
+    color: #4caf50; /* Green for win */
+  }
+  
+  #status.draw {
+    color: #ff9800; /* Orange for draw */
+  }
+  
+  @media (max-width: 768px) {
+    .game-board {
+      grid-template-columns: repeat(3, 80px);
+      grid-template-rows: repeat(3, 80px);
+    }
+  
+    .cell {
+      width: 80px;
+      height: 80px;
+      font-size: 2.5rem;
+    }
+  
+    button {
+      padding: 10px 20px;
+    }
+  }
+  
